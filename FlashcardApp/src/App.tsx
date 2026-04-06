@@ -1,5 +1,6 @@
 import './App.css'
 import CardContainer from './components/CardContainer'
+import Header from './components/header/Header'
 import type { Flashcard } from './types/FlashCardInfo'
 
 const exampleCardOne: Flashcard = {
@@ -10,14 +11,14 @@ const exampleCardOne: Flashcard = {
 }
 
 const examplecardTwo: Flashcard = {
-  id: 2, 
+  id: 2,
   category: "Functions",
   frontQuestion: "How do we write a function in TS?",
   backAnswer: "We declare it with like: 'function myFunc {}"
 }
 
 const exampleCardThree: Flashcard = {
-  id: 3, 
+  id: 3,
   category: "Tailwind",
   frontQuestion: "How do we use Tailwind in a file to style our app?",
   backAnswer: "We can write code in the jsx return statement "
@@ -30,11 +31,13 @@ const exampleStack = {
 
 function App() {
   return (
+
     <div>
+      <Header />
       {exampleStack.cards.map((oneCard) => (
-      
-          <CardContainer card={oneCard}/>
-    
+
+        <CardContainer card={oneCard} />
+
       ))}
     </div>
   )

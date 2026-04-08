@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 import CardContainer from './components/CardContainer'
 import Header from './components/header/Header'
@@ -30,17 +31,31 @@ const exampleStack = {
 }
 
 function App() {
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goToNext = () => {
+    if (currentIndex < exampleStack.cards.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  }
+
+  const goToPrevious = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  }
+
   return (
 
     <div>
       <Header />
-      {exampleStack.cards.map((oneCard) => (
-
-        <CardContainer card={oneCard} />
-
-      ))}
+      <CardContainer card={exampleStack.cards[currentIndex]} />
+      <button onClick={goToPrevious}>Previous</button>
+      <button onClick={goToNext}>Next</button>
     </div>
   )
 }
 
 export default App
+

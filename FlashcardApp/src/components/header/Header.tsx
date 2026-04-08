@@ -10,12 +10,12 @@ const Header = () => {
                 onClick={() => setIsOpen(!isOpen)}
                 className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600"
             >
-                {isOpen ? "Close" : "Open"}
+                {isOpen ? "Close" : "Add New Flashcard"}
             </button>
 
             {isOpen && (
                 <div className="mt-4">
-                    HERES THE MENU
+                    Placeholder Flashcard
                 </div>
             )}
         </header>

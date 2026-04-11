@@ -30,6 +30,11 @@ const exampleStack = {
   cards: [exampleCardOne, examplecardTwo, exampleCardThree]
 }
 
+const [stack, setStack] = useState({
+  name: "New Flashcard",
+  cards: [exampleCardOne, examplecardTwo, exampleCardThree]
+});
+
 function App() {
 
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -30,17 +30,17 @@ const exampleStack = {
   cards: [exampleCardOne, examplecardTwo, exampleCardThree]
 }
 
-const [stack, setStack] = useState({
-  name: "New Flashcard",
-  cards: [exampleCardOne, examplecardTwo, exampleCardThree]
-});
-
 function App() {
+
+  const [stack, setStack] = useState({
+    name: "New Flashcard",
+    cards: [exampleCardOne, examplecardTwo, exampleCardThree]
+  });
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToNext = () => {
-    if (currentIndex < exampleStack.cards.length - 1) {
+    if (currentIndex < stack.cards.length - 1) {
       setCurrentIndex(currentIndex + 1);
     }
   }
@@ -55,7 +55,7 @@ function App() {
 
     <div>
       <Header />
-      <CardContainer card={exampleStack.cards[currentIndex]} />
+      <CardContainer card={stack.cards[currentIndex]} />
       <button onClick={goToPrevious}>Previous</button>
       <button onClick={goToNext}>Next</button>
     </div>

@@ -25,11 +25,6 @@ const exampleCardThree: Flashcard = {
   backAnswer: "We can write code in the jsx return statement "
 }
 
-const exampleStack = {
-  name: "Frontend basics",
-  cards: [exampleCardOne, examplecardTwo, exampleCardThree]
-}
-
 function App() {
 
   const [stack, setStack] = useState({
